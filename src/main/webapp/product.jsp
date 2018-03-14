@@ -27,7 +27,7 @@
         <c:forEach var="productInBucket" items="${productsInBucket}">
             <li>
                 <a href="./product.do?id=${productInBucket.key.id}">${productInBucket.key.name}</a>: = ${productInBucket}
-                (<a href="./productRemoveFromBucket.do"
+                (<a href="./productRemoveFromBucket.do?id=${productInBucket.key.id}&redirectToId=${product.id}">X</a>
             </li>
         </c:forEach>
     </ul>

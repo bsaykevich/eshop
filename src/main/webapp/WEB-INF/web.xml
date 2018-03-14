@@ -84,6 +84,10 @@
         <servlet-class>net.golovach.eshop.Controller.ProductAddToBucketController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>productRemoveFromBucketController</servlet-name>
+        <servlet-class>net.golovach.eshop.Controller.ProductRemoveFromBucketController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>mockController</servlet-name>
         <servlet-class>net.golovach.eshop.Controller.DemoController</servlet-class>
         <!--<init-param>
@@ -123,6 +127,10 @@
     <servlet-mapping>
         <servlet-name>productAddToBucketController</servlet-name>
         <url-pattern>/productAddToBucket.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productRemoveFromBucketController</servlet-name>
+        <url-pattern>/productRemoveFromBucket.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>mockController</servlet-name>
