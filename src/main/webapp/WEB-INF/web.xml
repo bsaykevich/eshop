@@ -8,68 +8,6 @@
 
 
     <display-name>Archetype Created Web Application</display-name>
-    <!-- <context-param> может использоваться для подключения других элементов? (contentConfigLocation, /WEB-INF/spring/root-content.xml) -->
-    <!--<context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>WEB-INF.some-context.xml, WEB-INF.dao-context.xml</param-value>
-    </context-param>-->
-    <context-param>
-        <param-name>ctxParam2</param-name>
-        <param-value>222</param-value>
-    </context-param>
-
-    <filter>
-        <filter-name>timeFilter</filter-name>
-        <filter-class>net.golovach.eshop.filter.ProcessingTimeFilter</filter-class>
-    </filter>
-    <filter>
-        <filter-name>infoFilter</filter-name>
-        <filter-class>net.golovach.eshop.filter.RequestInfoFilter</filter-class>
-    </filter>
-    <!--<filter>
-        <filter-name>attributesToSessionFilter</filter-name>
-        <filter-class>net.golovach.eshop.filter.AttributesToSessionFilter</filter-class>
-        <init-param>
-            <param-name>param1_name</param-name>
-            <param-value>param1_value</param-value>
-        </init-param>
-        <init-param>
-            <param-name>param2_name</param-name>
-            <param-value>param2_value</param-value>
-        </init-param>
-    </filter>-->
-    <filter-mapping>
-        <filter-name>timeFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>infoFilter</filter-name>
-        <!--servlet-name>productController</servlet-name-->
-        <url-pattern>/*</url-pattern>
-        <!--dispatcher>REQUEST</dispatcher-->
-    </filter-mapping>
-   <!-- <filter-mapping>
-        <filter-name>attributesToSessionFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
-
-
-<!--добавить Spring и прикрутить ContextLoaderListener, DispatcherServlet в последний положить init-param contextConfigLocation со значением WEB-INF/...-->
-    <listener>
-        <listener-class>net.golovach.eshop.listener.MyHttpSessionActivationListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>net.golovach.eshop.listener.MyHttpSessionAttributeListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>net.golovach.eshop.listener.MyHttpSessionListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>net.golovach.eshop.listener.MyServletContextAttributeListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>net.golovach.eshop.listener.MyHttpSessionBindingListener</listener-class>
-    </listener>
 
     <servlet>
         <servlet-name>productController</servlet-name>
@@ -87,34 +25,6 @@
         <servlet-name>productRemoveFromBucketController</servlet-name>
         <servlet-class>net.golovach.eshop.Controller.ProductRemoveFromBucketController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>mockController</servlet-name>
-        <servlet-class>net.golovach.eshop.Controller.DemoController</servlet-class>
-        <!--<init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
-        </init-param>-->
-        <init-param>
-            <param-name>mockCtrlParam1</param-name>
-            <param-value>mc111</param-value>
-        </init-param>
-        <init-param>
-            <param-name>mockCtrlParam2</param-name>
-            <param-value>ms222</param-value>
-        </init-param>
-    </servlet>
-    <servlet>
-        <servlet-name>cookieDemoController</servlet-name>
-        <servlet-class>net.golovach.eshop.Controller.CookieDemoController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>sessionDemoController</servlet-name>
-        <servlet-class>net.golovach.eshop.Controller.SessionDemoController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MVCDemoController</servlet-name>
-        <servlet-class>net.golovach.eshop.Controller.MVCDemoController</servlet-class>
-    </servlet>
 
     <servlet-mapping>
         <servlet-name>productController</servlet-name>
@@ -131,22 +41,6 @@
     <servlet-mapping>
         <servlet-name>productRemoveFromBucketController</servlet-name>
         <url-pattern>/productRemoveFromBucket.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>mockController</servlet-name>
-        <url-pattern>/mock.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>cookieDemoController</servlet-name>
-        <url-pattern>/cookiesCounter</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>sessionDemoController</servlet-name>
-        <url-pattern>/sessionCounter</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MVCDemoController</servlet-name>
-        <url-pattern>/mvc.mock</url-pattern>
     </servlet-mapping>
 
     <session-config>
