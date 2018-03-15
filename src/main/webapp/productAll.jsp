@@ -13,7 +13,7 @@
 <b>PRODUCT ALL PAGE</b>
 <br/>
 <br/>
-<%List<Product> productAll = (List<Product>) request.getAttribute("productAll");
+<%List<Product> productAll = (List<Product>) request.getAttribute("productList");
 if(productAll!=null && productAll.size()!=0){
     for (Product product : productAll){
         response.getWriter().write(product.getName());
