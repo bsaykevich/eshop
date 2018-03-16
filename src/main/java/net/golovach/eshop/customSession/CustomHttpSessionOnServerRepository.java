@@ -9,10 +9,10 @@ public class CustomHttpSessionOnServerRepository {
 
     public static Map<String,CustomHttpSession> sessions = new ConcurrentHashMap<>();
 
-    static {
+   /* static {
         Thread sessionKillerThread = new Thread(new SessionKiller());
         sessionKillerThread.start();
-    }
+    }*/
 
     public static CustomHttpSession getSession(String sessionID) {
         return getSession(sessionID, true);
