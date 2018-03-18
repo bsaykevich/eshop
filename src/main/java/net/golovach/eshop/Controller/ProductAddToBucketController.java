@@ -41,7 +41,7 @@ public class ProductAddToBucketController extends HttpServlet {
                 Product product = productDao.selectById(id);
 
                 //std impl
-                /*HttpSession session = req.getSession(true);
+                HttpSession session = req.getSession(true);
 
                 Map<Product, Integer> oldBucket = (Map<Product, Integer>) session.getAttribute(PRODUCTS_IN_BUCKET);
 
@@ -57,10 +57,10 @@ public class ProductAddToBucketController extends HttpServlet {
                     }
                     //unmodifiableMap: bucket can`t be changed in another place, but we have to use oldBucket->newBucket
                     session.setAttribute(PRODUCTS_IN_BUCKET, Collections.unmodifiableMap(newBucket));
-                }*/
+                }
 
                 //custom impl
-                String customSessionID = (String) req.getAttribute(ATTRIBUTE_CUSTOM_SESSION_ID);
+                /*String customSessionID = (String) req.getAttribute(ATTRIBUTE_CUSTOM_SESSION_ID);
                 CustomHttpSession customSession = CustomHttpSessionOnServerRepository.getSession(customSessionID, true);
 
                 Map<Product, Integer> customSessionOldBucket = (Map<Product, Integer>) customSession.getAttribute(PRODUCTS_IN_BUCKET);
@@ -76,7 +76,7 @@ public class ProductAddToBucketController extends HttpServlet {
                         customSessionNewBucket.put(product, ++customSessionProductCount);
                     }
                     customSession.setAttribute(PRODUCTS_IN_BUCKET, Collections.unmodifiableMap(customSessionNewBucket));
-                }
+                }*/
 
                 String nextDestination = "product.do?id=" + id;
                 resp.sendRedirect(nextDestination);

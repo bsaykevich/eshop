@@ -1,6 +1,5 @@
 package net.golovach.eshop.customSession;
 
-import com.sun.deploy.net.HttpRequest;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

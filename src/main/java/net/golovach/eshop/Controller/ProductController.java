@@ -2,17 +2,16 @@ package net.golovach.eshop.Controller;
 
 import net.golovach.eshop.dao.ProductDao;
 import net.golovach.eshop.dao.exception.DaoException;
-import net.golovach.eshop.dao.exception.NoSuchEntityException;
-import net.golovach.eshop.dao.impl.ProductDaoMock;
 import net.golovach.eshop.entity.Product;
+import net.golovach.eshop.inject.DependencyInjectionServlet;
+import net.golovach.eshop.inject.Inject;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class ProductController extends HttpServlet{
+public class ProductController extends DependencyInjectionServlet {
 
     public static final String PARAM_ID = "id";
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "product";
@@ -20,7 +19,11 @@ public class ProductController extends HttpServlet{
     public static final String PAGE_ERROR = "error.jsp";
 
     // DI avoids using "= new ProductDaoMock()"
-    ProductDao productDao = new ProductDaoMock();
+
+    @Inject("productDao")
+    ProductDao productDao;
+
+    // ProductDao productDao = new ProductDaoMock();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

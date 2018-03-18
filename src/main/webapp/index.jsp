@@ -1,8 +1,7 @@
 <html>
 <body>
-    <br/>MAIN PAGE
-    <br/><a href="/eshop/product.do?id=1">product#1</a>
-    <br/><a href="/eshop/product.do?id=2">product#2</a>
-    <br/><a href="/eshop/product.do?id=3">product#3</a>
+    <b>WELCOME TO OUR ESHOP!</b>
+    <br/>
+    <br/> To continue purchasing please click here: <a href="productAll.jsp">PRODUCT LIST</a>
 </body>
 </html>

@@ -25,6 +25,10 @@
         <servlet-name>productRemoveFromBucketController</servlet-name>
         <servlet-class>net.golovach.eshop.Controller.ProductRemoveFromBucketController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>productRemoveBucketController</servlet-name>
+        <servlet-class>net.golovach.eshop.Controller.ProductRemoveBucketController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>productController</servlet-name>
@@ -41,6 +45,10 @@
     <servlet-mapping>
         <servlet-name>productRemoveFromBucketController</servlet-name>
         <url-pattern>/productRemoveFromBucket.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productRemoveBucketController</servlet-name>
+        <url-pattern>/productRemoveBucket.do</url-pattern>
     </servlet-mapping>
 
     <session-config>

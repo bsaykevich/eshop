@@ -20,6 +20,7 @@ public class ProductAllController extends HttpServlet {
     public static final String PAGE_ERROR = "error.jsp";
     //it is better not to redirect to error page, but suggest another similar product
 
+    //DELEGATION PATTERN
     ProductDao productDao = new ProductDaoMock();
 
     @Override
