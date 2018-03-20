@@ -23,20 +23,12 @@ public class FieldReflector {
     }
 
     public static List<Field> filterInject (List<Field> allFields){
-            List<Field> markedFields = new LinkedList<>();
-
-        Iterator<Field> iterator = allFields.iterator();
-        while (iterator.hasNext()){
-
-            Field next = iterator.next();
-            Annotation[] annotations = next.getAnnotations();
-
-            for(Annotation ann : annotations){
-                if(ann.getClass().equals(Inject.class)){
-                    markedFields.add(next);
-                }
+        List<Field> markedFields = new ArrayList<>();
+        for (Field field : allFields) {
+            Inject annotation = field.getAnnotation(Inject.class);
+            if(annotation != null){
+                markedFields.add(field);
             }
-
         }
         return markedFields;
     }
