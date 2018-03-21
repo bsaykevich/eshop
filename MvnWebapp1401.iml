@@ -15,6 +15,13 @@
       <configuration>
         <fileset id="fileset" name="AppContext Dao" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/appContext-dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/appContext-dao-aop-schema.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="AppContext DEMO" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/appContext-DEMO.xml</file>
+        </fileset>
+        <fileset id="fileset3" name="AppContext Dao Aop Annotation" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/appContext-dao-aop-annotation.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -36,8 +43,10 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.13" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.13" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot:2.0.0.RELEASE" level="project" />

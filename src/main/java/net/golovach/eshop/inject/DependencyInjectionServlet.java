@@ -1,7 +1,11 @@
 package net.golovach.eshop.inject;
 
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +26,8 @@ public class DependencyInjectionServlet extends HttpServlet {
             throw new ServletException();
         }
         try {
-            ApplicationContext appCtx = new ClassPathXmlApplicationContext("appContext-dao.xml");
+            //NEXT LINE MAY CONTAIN PROBLEMS! (see web.xml)
+            ApplicationContext appCtx = new ClassPathXmlApplicationContext(appCtxPath);
             //виртуальность!
             List<Field> allFields = FieldReflector.collectUpTo(this.getClass(), DependencyInjectionServlet.class);
             List<Field> injectFields = FieldReflector.filterInject(allFields);
@@ -41,6 +46,8 @@ public class DependencyInjectionServlet extends HttpServlet {
         } catch (IllegalAccessException e){
 
         }
+
+
     }
 
 
