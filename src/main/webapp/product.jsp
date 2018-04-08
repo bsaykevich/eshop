@@ -42,6 +42,6 @@
     <br/>
     <br/><a href="./productRemoveBucket.do">Очистить корзину</a>
     <br/>
-    <br/><a href="productAll.jsp">Product List</a>
+    <br/><a href="/productAll.do">Product List</a>
 </body>
 </html>

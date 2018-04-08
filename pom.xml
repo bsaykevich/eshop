@@ -98,7 +98,21 @@
           <scope>test</scope>
       </dependency>
 
-  </dependencies>
+       <!-- <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.9-rc</version>
+        </dependency>-->
+
+        <!-- old connector/J with FabricMySQLDriver for DevColibri example -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.31</version>
+        </dependency>
+
+
+    </dependencies>
   <build>
     <finalName>eshop</finalName>
         <plugins>
